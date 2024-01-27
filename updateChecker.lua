@@ -1,8 +1,8 @@
 -- Updater configuration
 local title = "Delta Upgrade";
-local url = "https://deltaexploits.net/android";
+local url = "https://deltaexploits.net";
 
-local versionsToUpdate = {"2.604.491"};
+local versionsToUpdate = {"2.604.491", "2.605.660"};
 
 -- Updater internals [START]
 local fVersion, fStringFormat = Version, string.format;
