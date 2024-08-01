@@ -1,3 +1,4 @@
+warn("loading kb and mouse")
 local virtualInputManager = cloneref(Instance.new("VirtualInputManager"));
 local mouse = cloneref(game:GetService("Players").LocalPlayer:GetMouse());
 local mouseButton1 = Enum.UserInputType.MouseButton1;
@@ -265,3 +266,6 @@ genv.Input = {
 	KeyDown = keypress,
 	KeyUp = keyrelease
 };
+
+warn("done loading kb and mouse")
+warn(getgenv().keypress)
