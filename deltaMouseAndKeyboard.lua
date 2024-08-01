@@ -6,19 +6,6 @@ local mouseButton2 = Enum.UserInputType.MouseButton2;
 local renv = getrenv();
 local genv = getgenv();
 
-local _getinfo = clonefunction(debug.getinfo);
-local _getgc = clonefunction(getgc);
-local _getreg = clonefunction(getreg);
-local _getscripts = clonefunction(getscripts);
-local _getmodules = clonefunction(getmodules);
-local _gettenv = clonefunction(gettenv);
-local _getthreadidentity = clonefunction(getthreadidentity);
-local _setthreadidentity = clonefunction(setthreadidentity);
-local _newcclosure = clonefunction(newcclosure);
-local _gethiddenproperty = clonefunction(gethiddenproperty);
-local _getconnections = clonefunction(getconnections);
-local _checkcaller = clonefunction(checkcaller);
-
 local _assert = clonefunction(renv.assert);
 local _error = clonefunction(renv.error);
 local _getfenv = clonefunction(renv.getfenv);
