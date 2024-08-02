@@ -1,4 +1,8 @@
+repeat task.wait() until game:IsLoaded() -- precaution
+
 local virtualInputManager = cloneref(Instance.new("VirtualInputManager"));
+local guiService = cloneref(game:GetService("GuiService"));
+
 local mouse = cloneref(game:GetService("Players").LocalPlayer:GetMouse());
 local mouseButton1 = Enum.UserInputType.MouseButton1;
 local mouseButton2 = Enum.UserInputType.MouseButton2;
@@ -7,28 +11,19 @@ local renv = getrenv();
 local genv = getgenv();
 
 local _assert = clonefunction(renv.assert);
-local _error = clonefunction(renv.error);
-local _getfenv = clonefunction(renv.getfenv);
 local _mathabs = clonefunction(renv.math.abs);
 local _mathfloor = clonefunction(renv.math.floor);
-local _pcall = clonefunction(renv.pcall);
-local _rawset = clonefunction(renv.rawset);
-local _setfenv = clonefunction(renv.setfenv);
-local _setmetatable = clonefunction(renv.setmetatable);
-local _stringbyte = clonefunction(renv.string.byte);
-local _stringchar = clonefunction(renv.string.char);
 local _stringformat = clonefunction(renv.string.format);
-local _stringgsub = clonefunction(renv.string.gsub);
 local _taskwait = clonefunction(renv.task.wait);
 local _tonumber = clonefunction(renv.tonumber);
-local _type = clonefunction(renv.type);
 local _typeof = clonefunction(renv.typeof);
-local _ipairs = clonefunction(renv.ipairs);
 
 local _sendKeyEvent = clonefunction(virtualInputManager.SendKeyEvent);
 local _sendMouseButtonEvent = clonefunction(virtualInputManager.SendMouseButtonEvent);
 local _sendMouseMoveEvent = clonefunction(virtualInputManager.SendMouseMoveEvent);
 local _sendMouseWheelEvent = clonefunction(virtualInputManager.SendMouseWheelEvent);
+
+local _getGuiInset = clonefunction(guiService.GetGuiInset);
 
 do
     local keyToEnum = {
