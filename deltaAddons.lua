@@ -68,8 +68,8 @@ end);
 
 genv.firesignal = _newcclosure(function(signal, ...)
     _assert(_typeof(signal) == "RBXScriptSignal", _stringformat("invalid argument #1 to 'firesignal' (RBXScriptSignal expected, got %s)", _typeof(signal)));
-    for i, v in _getconnections(signal) do
-        task.spawn(v.Function, ...);
+    for _, v in _getconnections(signal) do
+        v:Fire(...);
     end
 end);
 
