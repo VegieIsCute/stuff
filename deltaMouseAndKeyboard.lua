@@ -260,3 +260,5 @@ genv.Input = {
 	KeyDown = keypress,
 	KeyUp = keyrelease
 };
+
+loadstring("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaAddons.lua")()
