@@ -1,5 +1,6 @@
 repeat task.wait() until game:IsLoaded() -- precaution
 
+--[[ Variables ]]--
 local virtualInputManager = cloneref(Instance.new("VirtualInputManager"));
 local guiService = cloneref(game:GetService("GuiService"));
 
@@ -24,6 +25,8 @@ local _sendMouseMoveEvent = clonefunction(virtualInputManager.SendMouseMoveEvent
 local _sendMouseWheelEvent = clonefunction(virtualInputManager.SendMouseWheelEvent);
 
 local _getGuiInset = clonefunction(guiService.GetGuiInset);
+
+--[[ Functions ]]--
 
 do
     local keyToEnum = {
