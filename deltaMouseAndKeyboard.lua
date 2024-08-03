@@ -261,4 +261,4 @@ genv.Input = {
 	KeyUp = keyrelease
 };
 
-loadstring("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaAddons.lua")()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaAddons.lua"))()
