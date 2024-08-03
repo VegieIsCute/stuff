@@ -1,3 +1,6 @@
+repeat task.wait() until game:IsLoaded() -- precaution
+
+--[[ Variables ]]--
 local specialInfo = {
 	MeshPart = { "PhysicsData", "InitialSize" },
 	UnionOperation = { "AssetId", "ChildData", "FormFactor", "InitialSize", "MeshData", "PhysicsData" },
@@ -27,6 +30,8 @@ local _setmetatable = clonefunction(renv.setmetatable);
 local _rawset = clonefunction(renv.rawset);
 local _getfenv = clonefunction(renv.getfenv);
 local _setfenv = clonefunction(renv.setfenv);
+
+--[[ Functions ]]--
 
 genv.getallthreads = _newcclosure(function()
 	local threads = {};
@@ -131,6 +136,8 @@ genv.rconsolewarn = _newcclosure(function() end);
 genv.rconsoleerror = _newcclosure(function() end);
 genv.rconsoleinfo = _newcclosure(function() end);
 
+--[[ Aliases ]]--
+
 local aliasData = {
     --[getclipboard] = { "fromclipboard" },
     --[executeclipboard] = { "execclipboard" },
@@ -195,8 +202,8 @@ local aliasData = {
     [rconsoleinfo] = { "loginfo", "consoleinfo", "infouiconsole" }
 };
 
-for i, v in aliasData do
-    for i2 = 1, #v do
-        genv[v[i2]] = i;
+for func, aliases in aliasData do
+    for idx = 1, #aliases do
+        genv[aliases[idx]] = func;
     end
 end
